@@ -10,9 +10,9 @@
 			set { id = value; }
 		}
 
-        private string nomDevise;
+        private string? nomDevise;
 
-		public string NomDevise
+		public string? NomDevise
 		{
 			get { return nomDevise; }
 			set { nomDevise = value; }
@@ -26,6 +26,18 @@
 			set { taux = value; }
 		}
 
+        public Devise()
+        {
+			Id = 0;
+			NomDevise = null;
+			Taux = 0;
+        }
 
-	}
+        public Devise(int id, string? nomDevise, double taux)
+        {
+            Id = id;
+            NomDevise = nomDevise;
+            Taux = taux;
+        }
+    }
 }
