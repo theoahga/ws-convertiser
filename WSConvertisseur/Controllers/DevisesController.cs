@@ -26,6 +26,7 @@ namespace WSConvertisseur.Controllers
         /// <returns>Http response</returns>
         // GET: api/<DevisesController>
         [HttpGet]
+        [ProducesResponseType(200)]
         public IEnumerable<Devise> GetAll()
         {
             return devises;
@@ -40,6 +41,8 @@ namespace WSConvertisseur.Controllers
         /// <response code="404">When the currency id is not found</response>
         // GET api/<DevisesController>/5
         [HttpGet("{id}", Name = "GetDevise")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
         public ActionResult<Devise> GetDevises(int id)
         {
             Devise? devise = devises.FirstOrDefault((d) => d.Id == id);
@@ -59,6 +62,8 @@ namespace WSConvertisseur.Controllers
         /// <response code="400">When a problem occurs</response>
         // POST api/<DevisesController>
         [HttpPost]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
         public ActionResult<Devise> Post([FromBody] Devise devise)
         {
             if (!ModelState.IsValid)
@@ -79,6 +84,9 @@ namespace WSConvertisseur.Controllers
         /// <response code="400">When a problem occurs</response>
         // PUT api/<DevisesController>/5
         [HttpPut("{id}")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(400)]
         public ActionResult Put(int id, [FromBody] Devise devise)
         {
             if (!ModelState.IsValid)
@@ -110,6 +118,8 @@ namespace WSConvertisseur.Controllers
         /// <response code="200">When the currency has been removed</response>
         // DELETE api/<DevisesController>/5
         [HttpDelete("{id}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(204)]
         public ActionResult Delete(int id)
         {
             Devise? d = devises.FirstOrDefault(d => d.Id == id);
