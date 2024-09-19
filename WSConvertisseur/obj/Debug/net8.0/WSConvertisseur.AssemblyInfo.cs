@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WSConvertisseur")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+287d58614f92b7df897c8de2354498d7f45302b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("WSConvertisseur")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WSConvertisseur")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
