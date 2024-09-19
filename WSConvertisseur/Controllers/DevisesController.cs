@@ -27,10 +27,15 @@ namespace WSConvertisseur.Controllers
         }
 
         // GET api/<DevisesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{id}", Name = "GetDevises")]
+        public ActionResult<Devise> GetDevises(int id)
         {
-            return "value";
+            Devise? devise = devises.FirstOrDefault((d) => d.Id == id);
+
+            if (devise == null) {
+                return NotFound();
+            }
+            return devise;
         }
 
         // POST api/<DevisesController>
