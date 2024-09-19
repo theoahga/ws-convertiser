@@ -1,2 +1,4 @@
 .vs
-./WSConvertisseur/obj/Debug/
+WSConvertisseur/obj
+WSConvertisseur/bin
+WSConvertisseur/WSConvertisseur.csproj.user
