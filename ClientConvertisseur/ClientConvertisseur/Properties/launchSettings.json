@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ClientConvertisseur (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ClientConvertisseur (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

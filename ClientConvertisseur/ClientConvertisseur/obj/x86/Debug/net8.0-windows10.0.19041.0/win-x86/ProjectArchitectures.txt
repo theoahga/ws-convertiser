@@ -1,0 +1,1 @@
+C:\repo\ws-convertiser\ClientConvertisseur\ClientConvertisseur\ClientConvertisseur.csproj;x86
