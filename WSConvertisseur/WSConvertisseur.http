@@ -1,0 +1,6 @@
+@WSConvertisseur_HostAddress = http://localhost:5273
+
+GET {{WSConvertisseur_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
