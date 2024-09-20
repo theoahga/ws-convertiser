@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WSConvertisseur.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace WSConvertisseur.Controllers.Tests
 {
@@ -25,6 +26,20 @@ namespace WSConvertisseur.Controllers.Tests
             Assert.IsNull(result.Result, "Erreur est pas null");
             Assert.IsInstanceOfType(result.Value, typeof(Devise), "Pas une Devise");
             Assert.AreEqual(new Devise(1, "Dollar", 1.08), (Devise?)result.Value, "Devises pas identiques");
+        }
+
+        [TestMethod()]
+        public void GetDevises_404_error()
+        {
+            // Arrange
+            DevisesController controller = new DevisesController();
+            // Act
+            var result = controller.GetById(5);
+            // Assert
+            Assert.IsInstanceOfType(result, typeof(ActionResult<Devise>), "Pas un ActionResult");
+            Assert.IsInstanceOfType(result.Result, typeof(NotFoundResult), "Pas un NotFoundResult");
+            Assert.IsNull(result.Value, "Value n'est pas null");
+            Assert.AreEqual(((NotFoundResult)result.Result).StatusCode, StatusCodes.Status404NotFound, "Pas 404");
         }
     }
 }
