@@ -43,7 +43,7 @@ namespace WSConvertisseur.Controllers
         [HttpGet("{id}", Name = "GetDevise")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
-        public ActionResult<Devise> GetDevises(int id)
+        public ActionResult<Devise> GetById(int id)
         {
             Devise? devise = devises.FirstOrDefault((d) => d.Id == id);
 
